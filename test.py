@@ -1,11 +1,11 @@
-word = input("Введите слово: ")  # Запрашиваем слово у пользователя
+word = input("Введите слово: ")
 
-length = len(word)  # Определяем длину слова
-mid_index = length // 2  # Находим средний индекс
+length = len(word)
+mid_index = length // 2
 
-if length % 2 == 0:  # Если длина чётная
-    result = word[mid_index - 1: mid_index + 1]  # Извлекаем две средние буквы
+if length % 2 == 0:
+    result = word[mid_index - 1: mid_index + 1]
 else:  # Если длина нечётная
-    result = word[mid_index]  # Извлекаем одну среднюю букву
+    result = word[mid_index]
 
-print("Результат:", result)  # Выводим результат
+print("Результат:", result)
