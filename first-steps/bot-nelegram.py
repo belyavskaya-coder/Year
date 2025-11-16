@@ -1,4 +1,5 @@
 import os
+import logging
 from dotenv import load_dotenv
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
@@ -14,6 +15,13 @@ GROUP_LINK = "https://t.me/pavliktour"
 
 if not BOT_TOKEN:
     raise ValueError("❌ BOT_TOKEN не найден в .env")
+
+# 📝 Настройка логирования
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO,
+)
+logger = logging.getLogger(__name__)
 
 
 # === КНОПКИ ===
@@ -111,7 +119,7 @@ def main():
     app.add_handler(CommandHandler("post", post))
     app.add_handler(CallbackQueryHandler(button_handler))
 
-    print("✅ Бот запущен! Нажмите Ctrl+C для остановки.")
+    logger.info("✅ Бот запущен и готов к работе.")
     app.run_polling()
 
 
