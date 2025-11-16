@@ -18,3 +18,4 @@ __pycache__/
 # Custom folders
 Year/
 EOF
+*.tar.gz
