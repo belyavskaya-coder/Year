@@ -44,7 +44,7 @@ def load_data():
 def save_data(data):
     try:
         with open(DATA_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
+            json.dump(data, if, ensure_ascii=False, indent=2)
     except:
         pass
 
